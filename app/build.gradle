@@ -18,6 +18,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "UNSPLASH_ACCESS_KEY", unsplash_access_key)
     }
 
     buildTypes {
@@ -32,6 +34,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
     }
 }
 
@@ -53,10 +58,16 @@ dependencies {
     def coroutinesVersion = "1.6.4"
     def hiltVersion = "2.44"
     def pagingVersion = "3.1.1"
+    def lifecycleVersion = "2.5.1"
 
     //Coroutines
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion")
+
+    //Lifecycle + ViewModel & LiveData
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion")
 
     // Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:$navigationVersion")
@@ -76,4 +87,7 @@ dependencies {
     // Paging 3
     implementation("androidx.paging:paging-runtime:$pagingVersion")
 
+}
+kapt {
+    correctErrorTypes = true
 }
