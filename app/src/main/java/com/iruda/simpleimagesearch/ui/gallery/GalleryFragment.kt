@@ -34,8 +34,15 @@ class GalleryFragment : Fragment() {
 
         val binding = FragmentGalleryBinding.bind(view)
 
-        viewModel.photos.observe(viewLifecycleOwner) {
+        val adapter = UnsplashPhotoAdapter()
 
+        binding.apply {
+            recyclerView.setHasFixedSize(true)
+            recyclerView.adapter = adapter
+        }
+
+        viewModel.photos.observe(viewLifecycleOwner) {
+            adapter.submitData(viewLifecycleOwner.lifecycle, it)
         }
     }
 
