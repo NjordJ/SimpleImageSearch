@@ -19,7 +19,10 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "UNSPLASH_ACCESS_KEY", unsplash_access_key)
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
+
+        buildConfigField("String", "UNSPLASH_ACCESS_KEY", "\"${properties.getProperty("API_KEY")}\"")
     }
 
     buildTypes {
