@@ -1,4 +1,4 @@
-package com.iruda.simpleimagesearch
+package com.iruda.simpleimagesearch.data
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
