@@ -4,6 +4,7 @@
     package="com.iruda.simpleimagesearch">
 
     <application
+        android:name=".SimpleImageSearch"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

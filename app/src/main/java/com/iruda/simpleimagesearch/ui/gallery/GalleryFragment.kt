@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.iruda.simpleimagesearch.databinding.FragmentGalleryBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class GalleryFragment: Fragment() {
+@AndroidEntryPoint
+class GalleryFragment : Fragment() {
     private var _binding: FragmentGalleryBinding? = null
 
     // This property is only valid between onCreateView and
